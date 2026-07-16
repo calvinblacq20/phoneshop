@@ -1,0 +1,390 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>AURA | Premium Device Store</title>
+    <meta
+      name="description"
+      content="A modern premium electronics storefront inspired by clean Apple-style product presentation."
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css?v=14" />
+  </head>
+  <body>
+    <a class="skip-link" href="#shop">Skip to products</a>
+    <header class="site-header">
+      <nav class="nav-shell" aria-label="Main navigation">
+        <button
+          class="icon-button menu-toggle"
+          type="button"
+          aria-label="Open menu"
+          aria-expanded="false"
+          aria-controls="mobile-menu"
+        >
+          <svg viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M4 7h16M4 12h16M4 17h16" />
+          </svg>
+        </button>
+
+        <a class="brand" href="#top" aria-label="AURA home">AURA</a>
+
+        <div class="nav-links" aria-label="Primary">
+          <a href="#shop">Shop</a>
+          <a href="#collections">Collections</a>
+          <a href="#detail">Featured</a>
+          <a href="#support">Support</a>
+        </div>
+
+        <div class="nav-actions">
+          <button class="icon-button search-trigger" type="button" aria-label="Search products">
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+              <circle cx="11" cy="11" r="7" />
+              <path d="m20 20-3.5-3.5" />
+            </svg>
+          </button>
+          <button class="icon-button cart-toggle" type="button" aria-label="Open shopping bag">
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M6 8h12l-1 12H7L6 8Z" />
+              <path d="M9 8a3 3 0 0 1 6 0" />
+            </svg>
+            <span class="cart-count" aria-label="Items in bag">0</span>
+          </button>
+          <button class="icon-button" type="button" aria-label="Account">
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+              <circle cx="12" cy="8" r="4" />
+              <path d="M4 21a8 8 0 0 1 16 0" />
+            </svg>
+          </button>
+        </div>
+      </nav>
+      <div class="mobile-menu" id="mobile-menu" hidden>
+        <a href="#shop">Shop</a>
+        <a href="#collections">Collections</a>
+        <a href="#detail">Featured</a>
+        <a href="#support">Support</a>
+      </div>
+    </header>
+
+    <main id="top">
+      <section class="hero-section" aria-labelledby="hero-title">
+        <video
+          class="hero-image hero-video"
+          autoplay
+          muted
+          loop
+          playsinline
+          preload="auto"
+          poster="hero-poster.jpg?v=2"
+          aria-label="AURA product showcase in motion"
+        >
+          <source src="hero.webm?v=2" type="video/webm" />
+          <source src="hero.mp4?v=2" type="video/mp4" />
+        </video>
+        <div class="hero-content">
+          <p class="kicker">New generation</p>
+          <h1 id="hero-title">AURA Phone 15 Pro.</h1>
+          <p>Forged in titanium. Powered by A17 Bionic. Built for everything beyond ordinary.</p>
+          <div class="hero-actions">
+            <button class="pill-button light" type="button" data-add="aura-one-x">Buy Now</button>
+            <a class="text-link on-dark" href="#detail">Learn more</a>
+          </div>
+        </div>
+      </section>
+
+      <section class="category-band" aria-label="Product shortcuts">
+        <a href="#phones">
+          <span>Phones</span>
+          <strong>From $649</strong>
+        </a>
+        <a href="#studio">
+          <span>Studio</span>
+          <strong>M2 performance</strong>
+        </a>
+        <a href="#audio">
+          <span>Audio</span>
+          <strong>Spatial sound</strong>
+        </a>
+        <a href="#wearables">
+          <span>Watch</span>
+          <strong>Ultra ready</strong>
+        </a>
+      </section>
+
+      <section class="collections-section" id="collections" aria-labelledby="collections-title">
+        <div class="section-heading centered">
+          <p class="kicker">Collections</p>
+          <h2 id="collections-title">One ecosystem. Four quiet power moves.</h2>
+        </div>
+
+        <div class="feature-grid">
+          <article class="feature-tile large" id="studio">
+            <div>
+              <span class="badge">New Arrival</span>
+              <h3>AURA Studio M2</h3>
+              <p>Unprecedented performance for creators who need speed without visual noise.</p>
+              <a class="text-link" href="#shop">Explore Studio</a>
+            </div>
+            <img
+              src="https://lh3.googleusercontent.com/aida-public/AB6AXuCpuue4yvvjzBQuCUqfep0nVo9k32IaEu6qMtoht6vsccu-khfyadaumX4QmXczneJUN0h8k5CtAPhMR0pEFP9Gp3uhTSD8WASsyU3AZ8S9PovUB5tT0ANdAZ4dm8I-yrMNClG8q9Vb2RI8N7s8-yYhyhEaAwNAnBwL6Tjig_cUpSmc13nL2YYCGqDQnUTcKnuhduPBy6f1gkVYiuMWLju1Dngq5BoYUprODDThPml2R8ewaljFZUVqMQ"
+              alt="AURA Studio laptop on a bright desk"
+            />
+          </article>
+
+          <article class="feature-tile dark" id="audio">
+            <div>
+              <h3>Sonic Air</h3>
+              <p>Pure sound. Zero noise.</p>
+            </div>
+            <img
+              src="https://lh3.googleusercontent.com/aida-public/AB6AXuCt-WLsVkgBjTLX7yyIVXOIslkPRvSjiRWIOO_52Caa5flNwj1dJ5LW6Bp7z8owval48gWHp-H2bZPQMc1NZ85M-dob7t2g7Ttw3fjZfPeOXN1nb0zAR2gT1kA6qP7ENhZcjCd8R3C7GvBHTC6HMTwpq5vEjV8WHO6i-BZe6afff7fpeh47usXLnSwkMR-MKRMJ7pbzV08qSFuT4xK2pe5-PZPaUHmPtwvMcfwdBrpxxuW0EHDOwjjSpw"
+              alt="Black premium over-ear headphones"
+            />
+            <button class="pill-button light compact" type="button" data-add="sonic-air">Buy Now</button>
+          </article>
+
+          <article class="feature-tile compact-tile" id="wearables">
+            <div>
+              <h3>AURA Watch Ultra</h3>
+              <p>Adventure awaits.</p>
+            </div>
+            <img
+              src="https://lh3.googleusercontent.com/aida-public/AB6AXuCquwDCQdLR52-moCFxMANgNHhMgcNm5S1ChJFfhk1H4HLp8f0_LlUJX3KSW0xZnIIi1Hb57A1CP-fzxQ1pl9hKIpaXFcX-xkxwC3bv2tJ6eW5hP0ng6Di8_YbokeMd7sEnoOlwx6fcT2HSMM4VRD6B4O4CrD0jfAHuYgsw5KrB8VYZldFTpcdaCMpIDiB0uS6vDCidM_OhGdohe2mgN8LXZWG86gMcKpJYiB2HO-MSYFfFJnv6WEKSlw"
+              alt="Silver smartwatch with an orange sport band"
+            />
+          </article>
+
+          <article class="feature-tile wide">
+            <div>
+              <h3>Complete your ecosystem.</h3>
+              <p>Cases, chargers, stylus tools, and audio accessories designed to feel inevitable together.</p>
+              <a class="outline-link" href="#shop">Shop Accessories</a>
+            </div>
+            <img
+              src="https://lh3.googleusercontent.com/aida-public/AB6AXuCb3cgDnSghM-PsvfBEEzTatD5ynUd3FgSVUItw6Iq7mdq76OQLCilJKETHaQYbyhiOhyGcVMmFwAotUaA43JMrvNFeaLHGySvKlawUKgRtrmTDKZoEdxadh1h1zmwb3BMwiPBPfn9PRqbgpsVT7RHHd_YkVaOjzVUNHxY5MhnYaLmjuxcHDBand_Fe6TnljTV-DlIYIj1ChgLF2tCKGddSbSnhKifB5CplTbRpr22XOVDGeLf6_mvWrQ"
+              alt="Minimal tech accessories arranged on a desk"
+            />
+          </article>
+        </div>
+      </section>
+
+      <section class="shop-section" id="shop" aria-labelledby="shop-title">
+        <div class="section-heading split">
+          <div>
+            <p class="kicker">Shop</p>
+            <h2 id="shop-title">Premium devices, calmly arranged.</h2>
+          </div>
+          <div class="shop-tools" aria-label="Product controls">
+            <label class="search-box">
+              <svg viewBox="0 0 24 24" aria-hidden="true">
+                <circle cx="11" cy="11" r="7" />
+                <path d="m20 20-3.5-3.5" />
+              </svg>
+              <input id="product-search" type="search" placeholder="Search AURA" autocomplete="off" />
+            </label>
+            <label class="sort-box">
+              <span>Sort</span>
+              <select id="product-sort">
+                <option value="featured">Featured</option>
+                <option value="price-low">Price: Low to High</option>
+                <option value="price-high">Price: High to Low</option>
+                <option value="name">Name</option>
+              </select>
+            </label>
+          </div>
+        </div>
+
+        <div class="category-tabs" aria-label="Product categories">
+          <button class="category-tab active" type="button" data-category="all">All</button>
+          <button class="category-tab" type="button" data-category="phones">Phones</button>
+          <button class="category-tab" type="button" data-category="computing">Computing</button>
+          <button class="category-tab" type="button" data-category="audio">Audio</button>
+          <button class="category-tab" type="button" data-category="wearables">Wearables</button>
+          <button class="category-tab" type="button" data-category="accessories">Accessories</button>
+        </div>
+
+        <div class="shop-meta">
+          <span id="product-count">Showing all products</span>
+          <button class="clear-filters" type="button" hidden>Clear filters</button>
+        </div>
+
+        <div class="product-grid" id="product-grid" aria-live="polite"></div>
+      </section>
+
+      <section class="detail-section" id="detail" aria-labelledby="detail-title">
+        <div class="detail-media">
+          <img
+            id="detail-image"
+            src="https://lh3.googleusercontent.com/aida-public/AB6AXuBRLwVLWkMNfk8AL412nA3V5_GqvySfdv1cXgJYq7i6nwb_a9lQebpxJhzt-czncddC-OloznY1oHW7gO9Qeh1EXqvcvQq5iLo3xYo8IQ91fpmCEKE2-VUkIGQ7SPaxvlgqG3f_PTGvz8-FXlPF2U9cEfdvKf00b8_5KZtGxfVGBSex7MOT78sG5v7fUi1mqMWdI57vAGafB8HNgy4isyKoZtVeypJ1mdsopFx0UjRyP0wV1FLwgXtcUQ"
+            alt="AURA One X smartphone in titanium black"
+          />
+        </div>
+        <div class="detail-copy">
+          <p class="kicker">Featured release</p>
+          <h2 id="detail-title">AURA One X</h2>
+          <p id="detail-description">
+            Forged in titanium with a 200MP triple camera system, ProMotion display, and a neural engine
+            tuned for the next era of mobile creation.
+          </p>
+
+          <div class="option-group" aria-label="Finish">
+            <h3>Finish</h3>
+            <div class="swatches">
+              <button class="swatch active" type="button" data-finish="Titanium Black" style="--swatch: #111111">
+                <span>Titanium Black</span>
+              </button>
+              <button class="swatch" type="button" data-finish="Arctic Silver" style="--swatch: #d9d9dc">
+                <span>Arctic Silver</span>
+              </button>
+              <button class="swatch" type="button" data-finish="Ocean Cobalt" style="--swatch: #abc7ff">
+                <span>Ocean Cobalt</span>
+              </button>
+            </div>
+          </div>
+
+          <div class="option-group" aria-label="Storage">
+            <h3>Storage</h3>
+            <div class="storage-grid">
+              <button class="storage-option active" type="button" data-storage="256GB" data-extra="0">
+                <strong>256GB</strong>
+                <span>Included</span>
+              </button>
+              <button class="storage-option" type="button" data-storage="512GB" data-extra="200">
+                <strong>512GB</strong>
+                <span>+$200</span>
+              </button>
+              <button class="storage-option" type="button" data-storage="1TB" data-extra="400">
+                <strong>1TB</strong>
+                <span>+$400</span>
+              </button>
+            </div>
+          </div>
+
+          <div class="spec-grid">
+            <div>
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 4h14v16H5z" /><path d="M9 9h6M9 13h6" /></svg>
+              <strong>A17 Bionic</strong>
+              <span>Performance core</span>
+            </div>
+            <div>
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 8h4l2-3h4l2 3h4v11H4z" /><circle cx="12" cy="13.5" r="3" /></svg>
+              <strong>200MP Triple</strong>
+              <span>Cinematic capture</span>
+            </div>
+            <div>
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 7h10v10H7z" /><path d="M9 3v4M15 3v4M9 17v4M15 17v4M3 9h4M3 15h4M17 9h4M17 15h4" /></svg>
+              <strong>Neural Engine</strong>
+              <span>On-device AI</span>
+            </div>
+            <div>
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 4h10v16H7z" /><path d="M17 9h2v6h-2" /></svg>
+              <strong>48h Battery</strong>
+              <span>Fast charge</span>
+            </div>
+          </div>
+
+          <div class="detail-purchase">
+            <div>
+              <span id="detail-config">Titanium Black, 256GB</span>
+              <strong id="detail-price">$1,299</strong>
+            </div>
+            <button class="pill-button dark" type="button" data-add="aura-one-x">Add to Bag</button>
+          </div>
+        </div>
+      </section>
+
+      <section class="craft-section" aria-labelledby="craft-title">
+        <div class="craft-copy">
+          <p class="kicker">Precision engineering</p>
+          <h2 id="craft-title">Every detail is an obsession.</h2>
+          <p>
+            Components are milled to micron-level accuracy, then tuned for a tactile experience that
+            feels as solid as it looks.
+          </p>
+        </div>
+        <video
+          class="craft-video"
+          autoplay
+          muted
+          loop
+          playsinline
+          preload="auto"
+          poster="craft-detail-poster.jpg"
+          aria-label="Macro camera detail on an AURA phone"
+        >
+          <source src="craft-detail.webm" type="video/webm" />
+          <source src="craft-detail.mp4" type="video/mp4" />
+        </video>
+      </section>
+
+      <section class="support-section" id="support" aria-labelledby="support-title">
+        <div>
+          <p class="kicker">AURA Care</p>
+          <h2 id="support-title">Premium support after purchase.</h2>
+        </div>
+        <div class="support-grid">
+          <article>
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 7h11v9H3z" /><path d="M14 10h4l3 3v3h-7z" /><circle cx="7" cy="19" r="2" /><circle cx="17" cy="19" r="2" /></svg>
+            <h3>Express delivery</h3>
+            <p>Free shipping on every device and accessory order.</p>
+          </article>
+          <article>
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3 5 6v5c0 5 3 8 7 10 4-2 7-5 7-10V6z" /><path d="m9 12 2 2 4-5" /></svg>
+            <h3>Secure checkout</h3>
+            <p>Encrypted transactions and easy returns within 30 days.</p>
+          </article>
+          <article>
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 5h16v10H8l-4 4z" /><path d="M8 9h8M8 12h5" /></svg>
+            <h3>Specialist help</h3>
+            <p>Product guidance from setup through daily use.</p>
+          </article>
+        </div>
+      </section>
+    </main>
+
+    <aside class="cart-drawer" aria-label="Shopping bag" aria-hidden="true">
+      <div class="cart-header">
+        <div>
+          <p class="kicker">Shopping Bag</p>
+          <h2>Your selection</h2>
+        </div>
+        <button class="icon-button cart-close" type="button" aria-label="Close shopping bag">
+          <svg viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M18 6 6 18M6 6l12 12" />
+          </svg>
+        </button>
+      </div>
+      <div class="cart-items" id="cart-items"></div>
+      <div class="cart-summary">
+        <div><span>Subtotal</span><strong id="cart-subtotal">$0</strong></div>
+        <div><span>Shipping</span><strong>Free</strong></div>
+        <div><span>Tax</span><strong id="cart-tax">$0</strong></div>
+        <div class="total-row"><span>Total</span><strong id="cart-total">$0</strong></div>
+        <button class="pill-button dark" type="button">Check Out</button>
+        <p>Secure checkout, express delivery, and easy 30-day returns.</p>
+      </div>
+    </aside>
+    <div class="overlay" hidden></div>
+    <div class="toast" role="status" aria-live="polite" aria-atomic="true"></div>
+
+    <footer class="site-footer">
+      <div class="footer-shell">
+        <a class="brand" href="#top">AURA</a>
+        <div class="footer-links">
+          <a href="#shop">Shop</a>
+          <a href="#support">Shipping &amp; Returns</a>
+          <a href="#support">Sustainability</a>
+          <a href="#support">Support</a>
+        </div>
+        <span>&copy; 2026 AURA Electronics. Designed for Excellence.</span>
+      </div>
+    </footer>
+
+    <script src="script.js?v=3"></script>
+  </body>
+</html>

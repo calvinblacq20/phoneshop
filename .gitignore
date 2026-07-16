@@ -1,0 +1,12 @@
+# OS / editor cruft
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Local Claude Code settings (launch.json is shared and committed)
+.claude/settings.local.json
+
+# Raw source video uploads — large originals kept out of the repo.
+# The site ships the web-optimized transcodes instead (hero.*, craft-detail.*).
+IMG_*.MP4
+IMG_*.MOV
