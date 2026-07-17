@@ -10,3 +10,6 @@ desktop.ini
 # The site ships the web-optimized transcodes instead (hero.*, craft-detail.*).
 IMG_*.MP4
 IMG_*.MOV
+
+# Local backup of the commerce version (pre-showcase strip)
+backup/

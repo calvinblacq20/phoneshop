@@ -14,7 +14,7 @@
       href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
       rel="stylesheet"
     />
-    <link rel="stylesheet" href="styles.css?v=14" />
+    <link rel="stylesheet" href="styles.css?v=15" />
   </head>
   <body>
     <a class="skip-link" href="#shop">Skip to products</a>
@@ -48,19 +48,6 @@
               <path d="m20 20-3.5-3.5" />
             </svg>
           </button>
-          <button class="icon-button cart-toggle" type="button" aria-label="Open shopping bag">
-            <svg viewBox="0 0 24 24" aria-hidden="true">
-              <path d="M6 8h12l-1 12H7L6 8Z" />
-              <path d="M9 8a3 3 0 0 1 6 0" />
-            </svg>
-            <span class="cart-count" aria-label="Items in bag">0</span>
-          </button>
-          <button class="icon-button" type="button" aria-label="Account">
-            <svg viewBox="0 0 24 24" aria-hidden="true">
-              <circle cx="12" cy="8" r="4" />
-              <path d="M4 21a8 8 0 0 1 16 0" />
-            </svg>
-          </button>
         </div>
       </nav>
       <div class="mobile-menu" id="mobile-menu" hidden>
@@ -91,8 +78,7 @@
           <h1 id="hero-title">AURA Phone 15 Pro.</h1>
           <p>Forged in titanium. Powered by A17 Bionic. Built for everything beyond ordinary.</p>
           <div class="hero-actions">
-            <button class="pill-button light" type="button" data-add="aura-one-x">Buy Now</button>
-            <a class="text-link on-dark" href="#detail">Learn more</a>
+            <a class="pill-button light" href="#detail">Learn more</a>
           </div>
         </div>
       </section>
@@ -145,7 +131,6 @@
               src="https://lh3.googleusercontent.com/aida-public/AB6AXuCt-WLsVkgBjTLX7yyIVXOIslkPRvSjiRWIOO_52Caa5flNwj1dJ5LW6Bp7z8owval48gWHp-H2bZPQMc1NZ85M-dob7t2g7Ttw3fjZfPeOXN1nb0zAR2gT1kA6qP7ENhZcjCd8R3C7GvBHTC6HMTwpq5vEjV8WHO6i-BZe6afff7fpeh47usXLnSwkMR-MKRMJ7pbzV08qSFuT4xK2pe5-PZPaUHmPtwvMcfwdBrpxxuW0EHDOwjjSpw"
               alt="Black premium over-ear headphones"
             />
-            <button class="pill-button light compact" type="button" data-add="sonic-air">Buy Now</button>
           </article>
 
           <article class="feature-tile compact-tile" id="wearables">
@@ -293,7 +278,6 @@
               <span id="detail-config">Titanium Black, 256GB</span>
               <strong id="detail-price">$1,299</strong>
             </div>
-            <button class="pill-button dark" type="button" data-add="aura-one-x">Add to Bag</button>
           </div>
         </div>
       </section>
@@ -347,31 +331,6 @@
       </section>
     </main>
 
-    <aside class="cart-drawer" aria-label="Shopping bag" aria-hidden="true">
-      <div class="cart-header">
-        <div>
-          <p class="kicker">Shopping Bag</p>
-          <h2>Your selection</h2>
-        </div>
-        <button class="icon-button cart-close" type="button" aria-label="Close shopping bag">
-          <svg viewBox="0 0 24 24" aria-hidden="true">
-            <path d="M18 6 6 18M6 6l12 12" />
-          </svg>
-        </button>
-      </div>
-      <div class="cart-items" id="cart-items"></div>
-      <div class="cart-summary">
-        <div><span>Subtotal</span><strong id="cart-subtotal">$0</strong></div>
-        <div><span>Shipping</span><strong>Free</strong></div>
-        <div><span>Tax</span><strong id="cart-tax">$0</strong></div>
-        <div class="total-row"><span>Total</span><strong id="cart-total">$0</strong></div>
-        <button class="pill-button dark" type="button">Check Out</button>
-        <p>Secure checkout, express delivery, and easy 30-day returns.</p>
-      </div>
-    </aside>
-    <div class="overlay" hidden></div>
-    <div class="toast" role="status" aria-live="polite" aria-atomic="true"></div>
-
     <footer class="site-footer">
       <div class="footer-shell">
         <a class="brand" href="#top">AURA</a>
@@ -385,6 +344,6 @@
       </div>
     </footer>
 
-    <script src="script.js?v=3"></script>
+    <script src="script.js?v=4"></script>
   </body>
 </html>

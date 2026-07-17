@@ -93,7 +93,6 @@ const state = {
   category: "all",
   search: "",
   sort: "featured",
-  cart: new Map(),
   detailProductId: "aura-one-x",
   detailBasePrice: 1299,
   detailFinish: "Titanium Black",
@@ -107,27 +106,17 @@ const sortInput = document.querySelector("#product-sort");
 const productCount = document.querySelector("#product-count");
 const clearFiltersButton = document.querySelector(".clear-filters");
 const categoryTabs = document.querySelectorAll(".category-tab");
-const cartItems = document.querySelector("#cart-items");
-const cartSubtotal = document.querySelector("#cart-subtotal");
-const cartTax = document.querySelector("#cart-tax");
-const cartTotal = document.querySelector("#cart-total");
-const cartCount = document.querySelector(".cart-count");
-const overlay = document.querySelector(".overlay");
-const cartDrawer = document.querySelector(".cart-drawer");
 const siteHeader = document.querySelector(".site-header");
 const heroSection = document.querySelector(".hero-section");
 const menuToggle = document.querySelector(".menu-toggle");
 const mobileMenu = document.querySelector("#mobile-menu");
-const toast = document.querySelector(".toast");
 const motionQuery = window.matchMedia("(prefers-reduced-motion: reduce)");
 const detailConfig = document.querySelector("#detail-config");
 const detailPrice = document.querySelector("#detail-price");
-const detailAddButton = document.querySelector(".detail-purchase [data-add]");
 const detailDescription = document.querySelector("#detail-description");
 const scrollProgress = document.createElement("span");
 let revealObserver;
 let ticking = false;
-let toastTimer;
 let depthItems = [];
 let depthImageItems = [];
 
@@ -205,8 +194,7 @@ function renderProducts() {
             </div>
             <p>${product.description}</p>
             <div class="product-actions">
-              <button class="mini-button primary" type="button" data-add="${product.id}">Add to Bag</button>
-              <button class="mini-button" type="button" data-view="${product.id}">View</button>
+              <button class="mini-button primary" type="button" data-view="${product.id}">View details</button>
             </div>
           </div>
         </article>
@@ -216,84 +204,10 @@ function renderProducts() {
   hydrateMotionTargets(grid);
 }
 
-function renderCart() {
-  const entries = [...state.cart.entries()];
-  const subtotal = entries.reduce((sum, [id, item]) => {
-    const product = findProduct(id);
-    return sum + product.price * item.quantity;
-  }, 0);
-  const tax = subtotal * 0.08;
-  const total = subtotal + tax;
-  const totalItems = entries.reduce((sum, [, item]) => sum + item.quantity, 0);
-
-  cartCount.textContent = String(totalItems);
-  cartSubtotal.textContent = formatCurrency(subtotal);
-  cartTax.textContent = formatCurrency(tax);
-  cartTotal.textContent = formatCurrency(total);
-
-  if (!entries.length) {
-    cartItems.innerHTML = `
-      <div class="empty-cart">
-        <div>
-          <strong>Your bag is empty.</strong>
-          <span>Start with a device, then complete the ecosystem.</span>
-        </div>
-        <button class="mini-button primary" type="button" data-close-cart>Continue Shopping</button>
-      </div>
-    `;
-    return;
-  }
-
-  cartItems.innerHTML = entries
-    .map(([id, item]) => {
-      const product = findProduct(id);
-      return `
-        <div class="cart-item">
-          <img src="${product.image}" alt="${product.name}" />
-          <div>
-            <h3>${product.name}</h3>
-            <p>${product.finish}</p>
-            <p>${formatCurrency(product.price)}</p>
-            <div class="cart-item-controls">
-              <div class="stepper" aria-label="Quantity for ${product.name}">
-                <button type="button" data-decrement="${id}" aria-label="Decrease quantity">-</button>
-                <span>${item.quantity}</span>
-                <button type="button" data-increment="${id}" aria-label="Increase quantity">+</button>
-              </div>
-              <button class="remove-button" type="button" data-remove="${id}">Remove</button>
-            </div>
-          </div>
-        </div>
-      `;
-    })
-    .join("");
-}
-
-function addToCart(id) {
-  const item = state.cart.get(id) || { quantity: 0 };
-  state.cart.set(id, { quantity: item.quantity + 1 });
-  renderCart();
-  popCartCount();
-  showToast(findProduct(id));
-}
-
 function updateDetailSummary() {
   const price = state.detailBasePrice + state.detailStorageExtra;
   detailConfig.textContent = `${state.detailFinish}, ${state.detailStorage}`;
   detailPrice.textContent = formatCurrency(price);
-  detailAddButton.dataset.add = state.detailProductId;
-}
-
-function openCart() {
-  document.body.classList.add("cart-open");
-  cartDrawer.setAttribute("aria-hidden", "false");
-  overlay.hidden = false;
-}
-
-function closeCart() {
-  document.body.classList.remove("cart-open");
-  cartDrawer.setAttribute("aria-hidden", "true");
-  overlay.hidden = true;
 }
 
 function openMenu() {
@@ -362,25 +276,6 @@ function scrollToDetail(product) {
     motionQuery.matches ? 0 : 180,
   );
   document.querySelector("#detail").scrollIntoView({ behavior: "smooth", block: "start" });
-}
-
-function popCartCount() {
-  cartCount.classList.remove("is-popping");
-  void cartCount.offsetWidth;
-  cartCount.classList.add("is-popping");
-}
-
-function showToast(product) {
-  if (!product) {
-    return;
-  }
-
-  window.clearTimeout(toastTimer);
-  toast.innerHTML = `<strong>${product.name} added to bag</strong><span>${product.finish} - ${formatCurrency(product.price)}</span>`;
-  toast.classList.add("is-visible");
-  toastTimer = window.setTimeout(() => {
-    toast.classList.remove("is-visible");
-  }, 2600);
 }
 
 function updateScrollMotion() {
@@ -554,14 +449,7 @@ function hydrateMotionTargets(scope = document) {
 }
 
 document.addEventListener("click", (event) => {
-  const addButton = event.target.closest("[data-add]");
   const viewButton = event.target.closest("[data-view]");
-  const cartToggle = event.target.closest(".cart-toggle");
-  const cartClose = event.target.closest(".cart-close");
-  const removeButton = event.target.closest("[data-remove]");
-  const incrementButton = event.target.closest("[data-increment]");
-  const decrementButton = event.target.closest("[data-decrement]");
-  const closeCartButton = event.target.closest("[data-close-cart]");
   const searchTrigger = event.target.closest(".search-trigger");
   const swatch = event.target.closest(".swatch");
   const storageOption = event.target.closest(".storage-option");
@@ -571,14 +459,8 @@ document.addEventListener("click", (event) => {
     if (document.body.classList.contains("menu-open")) {
       closeMenu();
     } else {
-      closeCart();
       openMenu();
     }
-  }
-
-  if (addButton) {
-    addToCart(addButton.dataset.add);
-    openCart();
   }
 
   if (viewButton) {
@@ -586,39 +468,6 @@ document.addEventListener("click", (event) => {
     if (product) {
       scrollToDetail(product);
     }
-  }
-
-  if (cartToggle) {
-    closeMenu();
-    openCart();
-  }
-
-  if (cartClose || closeCartButton || event.target === overlay) {
-    closeCart();
-  }
-
-  if (event.target === overlay) {
-    closeMenu();
-  }
-
-  if (removeButton) {
-    state.cart.delete(removeButton.dataset.remove);
-    renderCart();
-  }
-
-  if (incrementButton) {
-    addToCart(incrementButton.dataset.increment);
-  }
-
-  if (decrementButton) {
-    const id = decrementButton.dataset.decrement;
-    const item = state.cart.get(id);
-    if (item && item.quantity > 1) {
-      state.cart.set(id, { quantity: item.quantity - 1 });
-    } else {
-      state.cart.delete(id);
-    }
-    renderCart();
   }
 
   if (searchTrigger) {
@@ -669,13 +518,11 @@ clearFiltersButton.addEventListener("click", resetFilters);
 
 document.addEventListener("keydown", (event) => {
   if (event.key === "Escape") {
-    closeCart();
     closeMenu();
   }
 });
 
 renderProducts();
-renderCart();
 updateDetailSummary();
 setupRevealMotion();
 setupDepthMotion();
