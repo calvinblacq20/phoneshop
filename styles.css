@@ -740,13 +740,13 @@ section[id] {
 
 .product-media {
   display: grid;
-  aspect-ratio: 4 / 5;
+  aspect-ratio: 1 / 1;
   place-items: center;
   overflow: hidden;
   position: relative;
   border-radius: 8px;
   background: var(--soft);
-  padding: 34px;
+  padding: 30px;
   transform:
     perspective(900px)
     rotateX(calc(var(--tilt-y, 0) * -1deg))

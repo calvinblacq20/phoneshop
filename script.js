@@ -8,7 +8,7 @@ const products = [
     priceText: "GHc 9,500",
     badge: "In stock",
     description: "Apple iPhone 15 Pro, 256GB titanium — brand new and boxed.",
-    image: "img/iphone-15-pro.jpg",
+    image: "img/products/iphone-15-pro.jpg",
   },
   {
     id: "iphone-13-pro-max",
@@ -19,7 +19,7 @@ const products = [
     priceText: "GHc 6,900",
     badge: "Popular",
     description: "iPhone 13 Pro Max, 256GB — flagship camera and battery life.",
-    image: "img/iphone-13-pro-max.jpg",
+    image: "img/products/iphone-13-pro-max.jpg",
   },
   {
     id: "iphone-12",
@@ -30,7 +30,7 @@ const products = [
     priceText: "GHc 3,300",
     badge: "Best value",
     description: "iPhone 12, 128GB — clean, boxed, and great value.",
-    image: "img/iphone-12.jpg",
+    image: "img/products/iphone-12.jpg",
   },
   {
     id: "ps5-controllers",
@@ -41,7 +41,7 @@ const products = [
     priceText: "Contact for price",
     badge: "Gaming",
     description: "Original PS5 consoles and DualSense controllers — new and used.",
-    image: "img/ps5.jpg",
+    image: "img/products/ps5.jpg",
   },
   {
     id: "xbox-series-x",
@@ -52,7 +52,7 @@ const products = [
     priceText: "GHc 5,500",
     badge: "Limited",
     description: "Xbox Series X 2TB limited edition console.",
-    image: "img/xbox-series-x.jpg",
+    image: "img/products/xbox-series-x.jpg",
   },
   {
     id: "ps-portal",
@@ -63,7 +63,7 @@ const products = [
     priceText: "GHc 2,800",
     badge: "New",
     description: "PlayStation Portal remote player — stream your PS5 anywhere.",
-    image: "img/ps-portal.jpg",
+    image: "img/products/ps-portal.jpg",
   },
   {
     id: "airpods-max",
@@ -74,7 +74,7 @@ const products = [
     priceText: "GHc 5,999",
     badge: "Audio",
     description: "Apple AirPods Max (2025) — high-fidelity over-ear sound.",
-    image: "img/airpods-max.jpg",
+    image: "img/products/airpods-max.jpg",
   },
   {
     id: "iphone-cases",
@@ -85,7 +85,7 @@ const products = [
     priceText: "Contact for price",
     badge: "Accessories",
     description: "Designer iPhone cases — durable, stylish, and affordable.",
-    image: "img/iphone-cases.jpg",
+    image: "img/products/iphone-cases.jpg",
   },
   {
     id: "starlink-gen4",
@@ -96,7 +96,7 @@ const products = [
     priceText: "GHc 4,999",
     badge: "Internet",
     description: "Starlink Gen v4 high-speed satellite internet kit.",
-    image: "img/starlink.jpg",
+    image: "img/products/starlink.jpg",
   },
 ];
 

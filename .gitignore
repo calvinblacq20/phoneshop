@@ -17,3 +17,6 @@ backup/
 # Raw TikTok source dumps (huge; product images extracted into img/)
 eazybuygh_images/
 eazybuygh_videos/
+
+# citypng working downloads (product images live in img/products/)
+img/citypng/
