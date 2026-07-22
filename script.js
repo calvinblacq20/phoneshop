@@ -113,7 +113,9 @@ const state = {
 
 const grid = document.querySelector("#product-grid");
 const searchInput = document.querySelector("#product-search");
-const sortInput = document.querySelector("#product-sort");
+const sortDropdown = document.querySelector("[data-sort-dropdown]");
+const sortTrigger = document.querySelector(".sort-trigger");
+const sortValueLabel = document.querySelector("[data-sort-value]");
 const productCount = document.querySelector("#product-count");
 const clearFiltersButton = document.querySelector(".clear-filters");
 const categoryTabs = document.querySelectorAll(".category-tab");
@@ -244,12 +246,40 @@ function updateProductMeta(count) {
   clearFiltersButton.hidden = !hasFilters;
 }
 
+function updateSortUI() {
+  document.querySelectorAll(".sort-option").forEach((option) => {
+    const selected = option.dataset.value === state.sort;
+    option.classList.toggle("is-selected", selected);
+    option.setAttribute("aria-selected", selected ? "true" : "false");
+    if (selected) {
+      sortValueLabel.textContent = option.textContent.trim();
+    }
+  });
+}
+
+function closeSort() {
+  sortDropdown.classList.remove("is-open");
+  sortTrigger.setAttribute("aria-expanded", "false");
+}
+
+function toggleSort() {
+  const open = sortDropdown.classList.toggle("is-open");
+  sortTrigger.setAttribute("aria-expanded", open ? "true" : "false");
+}
+
+function applySort(value) {
+  state.sort = value;
+  updateSortUI();
+  closeSort();
+  renderProducts();
+}
+
 function resetFilters() {
   state.category = "all";
   state.search = "";
   state.sort = "featured";
   searchInput.value = "";
-  sortInput.value = "featured";
+  updateSortUI();
   categoryTabs.forEach((tab) => tab.classList.toggle("active", tab.dataset.category === "all"));
   renderProducts();
 }
@@ -461,6 +491,16 @@ document.addEventListener("click", (event) => {
   const swatch = event.target.closest(".swatch");
   const storageOption = event.target.closest(".storage-option");
   const mobileMenuLink = event.target.closest(".mobile-menu a");
+  const sortTriggerEl = event.target.closest(".sort-trigger");
+  const sortOption = event.target.closest(".sort-option");
+
+  if (sortTriggerEl) {
+    toggleSort();
+  } else if (sortOption) {
+    applySort(sortOption.dataset.value);
+  } else if (!event.target.closest("[data-sort-dropdown]")) {
+    closeSort();
+  }
 
   if (event.target.closest(".menu-toggle")) {
     if (document.body.classList.contains("menu-open")) {
@@ -511,11 +551,6 @@ categoryTabs.forEach((button) => {
   });
 });
 
-sortInput.addEventListener("change", (event) => {
-  state.sort = event.target.value;
-  renderProducts();
-});
-
 searchInput.addEventListener("input", (event) => {
   state.search = event.target.value.trim();
   renderProducts();
@@ -526,9 +561,11 @@ clearFiltersButton.addEventListener("click", resetFilters);
 document.addEventListener("keydown", (event) => {
   if (event.key === "Escape") {
     closeMenu();
+    closeSort();
   }
 });
 
+updateSortUI();
 renderProducts();
 updateDetailSummary();
 setupRevealMotion();
