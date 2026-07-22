@@ -13,3 +13,7 @@ IMG_*.MOV
 
 # Local backup of the commerce version (pre-showcase strip)
 backup/
+
+# Raw TikTok source dumps (huge; product images extracted into img/)
+eazybuygh_images/
+eazybuygh_videos/

@@ -1,91 +1,102 @@
 const products = [
   {
-    id: "aura-one-x",
-    name: "AURA One X",
+    id: "iphone-15-pro",
+    name: "iPhone 15 Pro",
     category: "phones",
-    finish: "Titanium Black",
-    price: 1299,
-    badge: "New Release",
-    description: "Titanium frame, 200MP triple camera, ProMotion display.",
-    image:
-      "https://lh3.googleusercontent.com/aida-public/AB6AXuBRLwVLWkMNfk8AL412nA3V5_GqvySfdv1cXgJYq7i6nwb_a9lQebpxJhzt-czncddC-OloznY1oHW7gO9Qeh1EXqvcvQq5iLo3xYo8IQ91fpmCEKE2-VUkIGQ7SPaxvlgqG3f_PTGvz8-FXlPF2U9cEfdvKf00b8_5KZtGxfVGBSex7MOT78sG5v7fUi1mqMWdI57vAGafB8HNgy4isyKoZtVeypJ1mdsopFx0UjRyP0wV1FLwgXtcUQ",
+    finish: "256GB · In box",
+    price: 9500,
+    priceText: "GHc 9,500",
+    badge: "In stock",
+    description: "Apple iPhone 15 Pro, 256GB titanium — brand new and boxed.",
+    image: "img/iphone-15-pro.jpg",
   },
   {
-    id: "aura-one-pro",
-    name: "AURA One Pro",
+    id: "iphone-13-pro-max",
+    name: "iPhone 13 Pro Max",
     category: "phones",
-    finish: "Graphite",
-    price: 1199,
-    badge: "Pro",
-    description: "Cinematic capture with a sculpted graphite enclosure.",
-    image:
-      "https://lh3.googleusercontent.com/aida-public/AB6AXuCAecig4ofn2Role7Ihr34sdJPQU0fs3g1DSkg8aVRLGfWGBEoIbotx8LgOUrYXX1d5ZIIzXg_lOaHVD9RY7aB6TR6lhkBkddE04ef0x4hdIJcgwTEgEkkK7wXkZC0JIi5uPCn3Temm5xyb6hgbgjLsl7R27NEPV0tjf0diCa0mPxlMJaxPuX8RX0IqwZP1VOejZbob1Mtvc4IXtA_CXNds7UtnMpaBKU03n0GbVOjc9J2slOXeZSJAvA",
+    finish: "256GB",
+    price: 6900,
+    priceText: "GHc 6,900",
+    badge: "Popular",
+    description: "iPhone 13 Pro Max, 256GB — flagship camera and battery life.",
+    image: "img/iphone-13-pro-max.jpg",
   },
   {
-    id: "aura-one",
-    name: "AURA One",
+    id: "iphone-12",
+    name: "iPhone 12",
     category: "phones",
-    finish: "Ceramic White",
-    price: 999,
-    badge: "Essential",
-    description: "Clean glass, fast neural engine, all-day battery life.",
-    image:
-      "https://lh3.googleusercontent.com/aida-public/AB6AXuCQdWBWseybpuw_GmsTNzR0AE1cUfQpHvckmS54An9F6YL4sHLJuzUuIs5PRQhAUopff6QJQ0dXsSHgQbHNhn0iatDASm2RVd0G9rIj1hmUQxOIgMaphL77r45GS3nMERRKAi0R88AA1aPIjv9eQf6yKTyw_tjlPFosCYbAhIBkIEUGDzY-0x5oBSVrl3Q1LF7Ijfq7Ex_dxqwPV7K7w7mQO1ljl5SP5EUm16weNos1f0KEq1S0KcHX3w",
+    finish: "128GB · In box",
+    price: 3300,
+    priceText: "GHc 3,300",
+    badge: "Best value",
+    description: "iPhone 12, 128GB — clean, boxed, and great value.",
+    image: "img/iphone-12.jpg",
   },
   {
-    id: "aura-studio-m2",
-    name: "AURA Studio M2",
-    category: "computing",
-    finish: "Midnight Aluminum",
-    price: 1899,
-    badge: "Creator",
-    description: "Silent power for editing, design, and everyday work.",
-    image:
-      "https://lh3.googleusercontent.com/aida-public/AB6AXuCpuue4yvvjzBQuCUqfep0nVo9k32IaEu6qMtoht6vsccu-khfyadaumX4QmXczneJUN0h8k5CtAPhMR0pEFP9Gp3uhTSD8WASsyU3AZ8S9PovUB5tT0ANdAZ4dm8I-yrMNClG8q9Vb2RI8N7s8-yYhyhEaAwNAnBwL6Tjig_cUpSmc13nL2YYCGqDQnUTcKnuhduPBy6f1gkVYiuMWLju1Dngq5BoYUprODDThPml2R8ewaljFZUVqMQ",
+    id: "ps5-controllers",
+    name: "PlayStation 5 & Controllers",
+    category: "gaming",
+    finish: "New & pre-owned",
+    price: 0,
+    priceText: "Contact for price",
+    badge: "Gaming",
+    description: "Original PS5 consoles and DualSense controllers — new and used.",
+    image: "img/ps5.jpg",
   },
   {
-    id: "sonic-air",
-    name: "Sonic Air",
-    category: "audio",
-    finish: "Space Black",
-    price: 349,
-    badge: "Spatial",
-    description: "Wireless over-ear audio with adaptive quiet control.",
-    image:
-      "https://lh3.googleusercontent.com/aida-public/AB6AXuCt-WLsVkgBjTLX7yyIVXOIslkPRvSjiRWIOO_52Caa5flNwj1dJ5LW6Bp7z8owval48gWHp-H2bZPQMc1NZ85M-dob7t2g7Ttw3fjZfPeOXN1nb0zAR2gT1kA6qP7ENhZcjCd8R3C7GvBHTC6HMTwpq5vEjV8WHO6i-BZe6afff7fpeh47usXLnSwkMR-MKRMJ7pbzV08qSFuT4xK2pe5-PZPaUHmPtwvMcfwdBrpxxuW0EHDOwjjSpw",
+    id: "xbox-series-x",
+    name: "Xbox Series X",
+    category: "gaming",
+    finish: "2TB",
+    price: 5500,
+    priceText: "GHc 5,500",
+    badge: "Limited",
+    description: "Xbox Series X 2TB limited edition console.",
+    image: "img/xbox-series-x.jpg",
   },
   {
-    id: "aura-watch-ultra",
-    name: "AURA Watch Ultra",
-    category: "wearables",
-    finish: "Titanium Orange",
-    price: 799,
-    badge: "Outdoor",
-    description: "Rugged sensors, bright display, and deep fitness metrics.",
-    image:
-      "https://lh3.googleusercontent.com/aida-public/AB6AXuCquwDCQdLR52-moCFxMANgNHhMgcNm5S1ChJFfhk1H4HLp8f0_LlUJX3KSW0xZnIIi1Hb57A1CP-fzxQ1pl9hKIpaXFcX-xkxwC3bv2tJ6eW5hP0ng6Di8_YbokeMd7sEnoOlwx6fcT2HSMM4VRD6B4O4CrD0jfAHuYgsw5KrB8VYZldFTpcdaCMpIDiB0uS6vDCidM_OhGdohe2mgN8LXZWG86gMcKpJYiB2HO-MSYFfFJnv6WEKSlw",
+    id: "ps-portal",
+    name: "PlayStation Portal",
+    category: "gaming",
+    finish: "Limited edition",
+    price: 2800,
+    priceText: "GHc 2,800",
+    badge: "New",
+    description: "PlayStation Portal remote player — stream your PS5 anywhere.",
+    image: "img/ps-portal.jpg",
   },
   {
-    id: "aura-pulse-x",
-    name: "AURA Pulse X",
-    category: "wearables",
-    finish: "Titanium Silver",
-    price: 299,
-    badge: "Daily",
-    description: "A lighter watch for health, messages, and quick checkout.",
-    image:
-      "https://lh3.googleusercontent.com/aida-public/AB6AXuDH3F4DpBUIgg_g6QpeBzBjwPUWR8WLu7R0BVz5B3Ao_91V8S1sNLNCKL2BQH061_4voX2BVPIzMkocCIcIuchmrIUTSM8BdNLu5YRRPL60d3kZqf2UH7VE4IG5vO8EmyO9iQuKMk7VgjmSDKaJRZIt2y5XVFJOYsd_CcsafanjWmgkB7Kd9lp7f5HZbicaqTZJ-Bxl0Zzet0OFQREjs_VW309QAGO8Mb9DvKgCcAg5ZLnv-YDVGxOHCw",
-  },
-  {
-    id: "aura-accessory-kit",
-    name: "AURA Accessory Kit",
+    id: "airpods-max",
+    name: "AirPods Max",
     category: "accessories",
-    finish: "Soft White",
-    price: 149,
-    badge: "Bundle",
-    description: "Wireless charger, case, and precision stylus in one kit.",
-    image:
-      "https://lh3.googleusercontent.com/aida-public/AB6AXuCb3cgDnSghM-PsvfBEEzTatD5ynUd3FgSVUItw6Iq7mdq76OQLCilJKETHaQYbyhiOhyGcVMmFwAotUaA43JMrvNFeaLHGySvKlawUKgRtrmTDKZoEdxadh1h1zmwb3BMwiPBPfn9PRqbgpsVT7RHHd_YkVaOjzVUNHxY5MhnYaLmjuxcHDBand_Fe6TnljTV-DlIYIj1ChgLF2tCKGddSbSnhKifB5CplTbRpr22XOVDGeLf6_mvWrQ",
+    finish: "2025 model",
+    price: 5999,
+    priceText: "GHc 5,999",
+    badge: "Audio",
+    description: "Apple AirPods Max (2025) — high-fidelity over-ear sound.",
+    image: "img/airpods-max.jpg",
+  },
+  {
+    id: "iphone-cases",
+    name: "Premium iPhone Cases",
+    category: "accessories",
+    finish: "BAPE · Nike & more",
+    price: 0,
+    priceText: "Contact for price",
+    badge: "Accessories",
+    description: "Designer iPhone cases — durable, stylish, and affordable.",
+    image: "img/iphone-cases.jpg",
+  },
+  {
+    id: "starlink-gen4",
+    name: "Starlink Gen v4",
+    category: "accessories",
+    finish: "Brand new",
+    price: 4999,
+    priceText: "GHc 4,999",
+    badge: "Internet",
+    description: "Starlink Gen v4 high-speed satellite internet kit.",
+    image: "img/starlink.jpg",
   },
 ];
 
@@ -93,9 +104,9 @@ const state = {
   category: "all",
   search: "",
   sort: "featured",
-  detailProductId: "aura-one-x",
-  detailBasePrice: 1299,
-  detailFinish: "Titanium Black",
+  detailProductId: "iphone-15-pro",
+  detailBasePrice: 9500,
+  detailFinish: "Natural Titanium",
   detailStorage: "256GB",
   detailStorageExtra: 0,
 };
@@ -126,11 +137,7 @@ scrollProgress.setAttribute("aria-hidden", "true");
 siteHeader.append(scrollProgress);
 
 function formatCurrency(amount) {
-  return new Intl.NumberFormat("en-US", {
-    style: "currency",
-    currency: "USD",
-    maximumFractionDigits: 0,
-  }).format(amount);
+  return "GHc " + Number(amount).toLocaleString("en-US");
 }
 
 function findProduct(id) {
@@ -190,7 +197,7 @@ function renderProducts() {
                 <h3>${product.name}</h3>
                 <p>${product.finish}</p>
               </div>
-              <span class="price">${formatCurrency(product.price)}</span>
+              <span class="price">${product.priceText}</span>
             </div>
             <p>${product.description}</p>
             <div class="product-actions">
@@ -207,7 +214,7 @@ function renderProducts() {
 function updateDetailSummary() {
   const price = state.detailBasePrice + state.detailStorageExtra;
   detailConfig.textContent = `${state.detailFinish}, ${state.detailStorage}`;
-  detailPrice.textContent = formatCurrency(price);
+  detailPrice.textContent = price > 0 ? formatCurrency(price) : "Contact for price";
 }
 
 function openMenu() {
