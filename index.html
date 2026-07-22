@@ -60,17 +60,25 @@
 
     <main id="top">
       <section class="hero-section" aria-labelledby="hero-title">
-        <img class="hero-image" src="img/gadgets-hero.jpg" alt="Inside the Eazybuy store" />
+        <video
+          class="hero-image hero-video"
+          autoplay
+          muted
+          loop
+          playsinline
+          preload="auto"
+          poster="hero-poster.jpg?v=2"
+          aria-label="Eazybuy product showcase in motion"
+        >
+          <source src="hero.webm?v=2" type="video/webm" />
+          <source src="hero.mp4?v=2" type="video/mp4" />
+        </video>
         <div class="hero-content">
-          <p class="kicker">Kumasi · Ghana</p>
-          <h1 id="hero-title">Phones, PlayStation &amp; more.</h1>
-          <p>
-            Your plug for iPhones, gaming consoles, and premium accessories — brand new and clean
-            pre-owned, boxed and affordable. Located at KNUST, Ayeduase Gate.
-          </p>
+          <p class="kicker">New generation</p>
+          <h1 id="hero-title">Eazybuy Phone 15 Pro.</h1>
+          <p>Forged in titanium. Powered by A17 Bionic. Built for everything beyond ordinary.</p>
           <div class="hero-actions">
-            <a class="pill-button light" href="tel:+233246660729">Call 0246 660 729</a>
-            <a class="text-link on-dark" href="#shop">Browse products</a>
+            <a class="pill-button light" href="#detail">Learn more</a>
           </div>
         </div>
       </section>
@@ -259,14 +267,26 @@
 
       <section class="craft-section" aria-labelledby="craft-title">
         <div class="craft-copy">
-          <p class="kicker">The Eazybuy promise</p>
-          <h2 id="craft-title">Genuine products. Honest prices.</h2>
+          <p class="kicker">Precision engineering</p>
+          <h2 id="craft-title">Every detail is an obsession.</h2>
           <p>
-            Every phone, console, and accessory is inspected and boxed — brand new or clean pre-owned,
-            always exactly as described. Buy it, sell it, the easy way.
+            Components are milled to micron-level accuracy, then tuned for a tactile experience that
+            feels as solid as it looks.
           </p>
         </div>
-        <img class="craft-video" src="img/iphone-cases.jpg" alt="Premium iPhone case from Eazybuy" />
+        <video
+          class="craft-video"
+          autoplay
+          muted
+          loop
+          playsinline
+          preload="auto"
+          poster="craft-detail-poster.jpg"
+          aria-label="Macro camera detail on an Eazybuy phone"
+        >
+          <source src="craft-detail.webm" type="video/webm" />
+          <source src="craft-detail.mp4" type="video/mp4" />
+        </video>
       </section>
 
       <section class="support-section" id="support" aria-labelledby="support-title">
