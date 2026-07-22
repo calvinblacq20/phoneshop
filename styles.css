@@ -138,10 +138,20 @@ svg {
 }
 
 .brand {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
   font-size: 1.45rem;
   font-weight: 800;
   letter-spacing: 0;
   transition: opacity 180ms ease;
+}
+
+.brand-logo {
+  width: auto;
+  height: 0.92em;
+  fill: currentColor;
+  stroke: none;
 }
 
 .brand:hover {
