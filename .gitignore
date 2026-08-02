@@ -3,8 +3,9 @@
 Thumbs.db
 desktop.ini
 
-# Local Claude Code settings (launch.json is shared and committed)
-.claude/settings.local.json
+# Editor & tool settings
+.claude/
+
 
 # Raw source video uploads — large originals kept out of the repo.
 # The site ships the web-optimized transcodes instead (hero.*, craft-detail.*).
