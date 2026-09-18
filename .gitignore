@@ -3,10 +3,6 @@
 Thumbs.db
 desktop.ini
 
-# Editor & tool settings
-.claude/
-
-
 # Raw source video uploads — large originals kept out of the repo.
 # The site ships the web-optimized transcodes instead (hero.*, craft-detail.*).
 IMG_*.MP4
